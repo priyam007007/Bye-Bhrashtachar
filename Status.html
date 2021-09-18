@@ -4,7 +4,6 @@
 	/* CSS property for header section */
 	*{
 		margin: 0px;
-		color: palevioletred;
 	}
 	.header {
                 background-color: #011530;
@@ -33,6 +32,33 @@
                 background-color: white;
                 color: palevioletred;
             }
+            .container{
+                display: grid;
+                color: white;
+                
+            }
+            .notif{
+                background-color: #011530;
+                padding: 1%;
+                margin: 2px;
+                border-radius: 2%;
+
+            }
+            .notif>.head{
+                font-size: 200%;
+                color: palevioletred;
+            }
+            .notif>a{
+                float: right;
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                background-color: palevioletred;
+                border-radius: 10%;
+            }
+            
 </style>
 
 <body>
@@ -50,6 +76,24 @@
 		<a href = "/Status.html">Status</a>
 		<a href = "#">Profile</a>
 	</div><br>
+    <div class="container">
+            <div class="notif">
+                <p class="head">Red light crossing</p>
+                <P>Car Details:</P>
+                <P>Car no- DL 0B 5632</P>
+                <P>Owner name- X AE A-12</P>
+                Fine- Rs 2000
+                <a href="#">Pay Now</a>
+            </div>
+            <div class="notif">
+                <p class="head">Red light crossing</p>
+                <P>Car Details:</P>
+                <P>Car no- DL 0B 5632</P>
+                <P>Owner name- X AE A-12</P>
+                Fine- Rs 2000
+                <a href="#">Pay Now</a>
+            </div>
+    </div>
 	 
 
 </body>
