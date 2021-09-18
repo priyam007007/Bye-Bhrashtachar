@@ -7,14 +7,23 @@
 		color: palevioletred;
 	}
 	.header {
-                background-color: #011530;
-                padding: 15px;
-                text-align: center;
+                background-color: #01112b;
+                padding: 30px;
+        		text-align: center;
+        		color: palevioletred;
+        		font-family: "Comic Sans MS", Times, serif;
             }
-    img.logo{
-		display: inline;
-		width: 3%;
-		border-radius: 50%;
+	td {
+        align-content: center;
+		background-color: #01112b;
+        padding: 30px;
+        
+        color: palevioletred;
+        font-family: "Comic Sans MS", Times, serif;
+	}
+    img{
+		width: 200px;
+		height: 200px;
 	}
             /* CSS property for navigation menu */
             .nav_menu {
@@ -167,19 +176,18 @@
 
 <body>
 	<!-- header of website layout -->
-	<div class = "header">
-		<img src="/BYE BHRASTACHAR.png" alt="Logo" class="logo">
-		<h2 style = "color: palevioletred;font-size:200%;">
-			Bye Bhrastachar
-		</h2>
-	</div>
+	<header>
+		<table width="100%">
+			<tr>
+				<td><img src="BB.png" Logo" align="left"></td>
+				<td><h2 style = "color: palevioletred; font-size:200%;">
+					Bye Bhrastachar
+				</h2></td>
+			</tr>
+		</table>
+	</header>
 	 
-	<!-- navigation menu for website layout -->
-	<div class = "nav_menu">
-		<a href = "#">Home</a>
-		<a href = "/Status.html">Status</a>
-		<a href = "#">Profile</a>
-	</div><br>
+	
 	 
 	<center style = "font-size:200%;">
 		<h2>Login Form</h2>
@@ -204,7 +212,7 @@
 				<label><b>Password</b></label>
 				<input type="password" placeholder="Enter Password" name="psw" required>
 
-				<button type="submit">Login</button>
+				<button type="submit" onclick="direct()">Login</button>
 				<input type="checkbox" checked="checked"> Remember me
 			</div>
 
@@ -216,6 +224,9 @@
 	</div>
 
 	<script>
+		function direct(){
+			window.location.replace("home.html");
+		}
 		var modal = document.getElementById('id01');
 		window.onclick = function(event) {
 			if (event.target == modal) {

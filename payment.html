@@ -1,0 +1,247 @@
+<html>
+    <head>
+    <style>
+    header {
+        background-color: #01112b;
+        padding: 30px;
+        text-align: center;
+        color: palevioletred;
+        font-family: "Comic Sans MS", Times, serif;
+}
+a:hover
+{
+    color: palevioletred;
+}
+td {
+        background-color: #01112b;
+        padding: 30px;
+        
+        color: palevioletred;
+        font-family: "Comic Sans MS", Times, serif;
+}
+img
+{
+    
+    width: 200px;
+    height: 200px;;
+}
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+.container {
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+
+input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+.collapsible {
+            background-color: white;
+            color: black;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: 1px solid black;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+        }
+.active, .collapsible:hover {
+            background-color: palevioletred;
+        }
+.content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #f1f1f1;
+            width:100%;
+        }
+span.price {
+  float: right;
+  color: grey;
+}
+
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+}
+
+    </style>
+    
+    </head>
+    <body link="white" alink="palevioletred" vlink="white">
+
+        <header>
+            <table width="100%">
+                <tr>
+                    <td><a href="home.html"><img align="left" src="BB.png"/></a></td>
+                    <td><h1>Only Place for All your Transport Needs</h1></td>
+                    <td><h4 align="right">Driving Licence No.: MP13N-2012-0124338</h4><div align="right"><a href="#">LogOut</a> </div></td>
+                </tr>
+            </table>
+        </header>
+        <div class="row">
+            <div class="col-75">
+              <div class="container">
+                <form action="/action_page.php">
+                    <div class="row">
+                        <div class="col-50">
+                            <h3>Payment</h3>
+                            <button type="button" class="collapsible">
+                                <h3>Click here to pay using Credit/Debit Card</h3>
+                            </button>
+                            <div class="content">
+                                <label for="cname">Name on Card</label>
+                                <input type="text" id="cname" name="cardname" placeholder="Sergio Marquina">
+                                <label for="ccnum">Card number</label>
+                                <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                                <label for="expmonth">Exp Month</label>
+                                <input type="text" id="expmonth" name="expmonth" placeholder="September">
+                                <div class="row">
+                                    <div class="col-50">
+                                        <label for="expyear">Exp Year</label>
+                                        <input type="text" id="expyear" name="expyear" placeholder="2024">
+                                    </div>
+                                    <div class="col-50">
+                                        <label for="cvv">CVV</label>
+                                        <input type="text" id="cvv" name="cvv" placeholder="352">
+                                    </div>
+                                </div>
+                                <input type="submit" value="Confirm Payment" class="btn" onclick="Card()">
+                            </div>
+                            
+                            <button type="button" class="collapsible">
+                                <h3>Click here to pay using UPI</h3>
+                            </button>
+                            <div class="content" align="center">
+                                <h3>Please scan the following qr code to complete the payment.</h3>
+                                <br/><img src="qr.png"><br/>
+                                <h3>You can pay through any of the following UPI apps</h3>
+                                <br/><img src="upi.png" style="height: 100px;" >
+                            </div>
+
+                            <button type="button" class="collapsible">
+                                <h3>Click here to pay using Cash</h3>
+                            </button>
+                            <div class="content" align="center">
+                                <label for="pin" style="width: 40%;"><h3>Enter your pincode</h3></label>
+                                <input type="text" id="pin" name="pin" placeholder="452009" maxlength="6" style="width: 20%;">
+                                <button onclick="displayText();">OK</button>
+                                <div id="address" style="display: none;">
+                                    <h3>Please pay a fine of <b>Rs. 2000 </b> at below address as soon as possible<br/>
+                                    Rajendra Nagar Police Station, A.B. Road, Indore, MP</h3>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>  
+    </body>
+    <script>
+        function displayText()
+        {
+            //alert(document.getElementById("pin").value);
+            if(document.getElementById("pin").value=="" || document.getElementById("pin").value.length!=6)
+                alert("Please enter correct pincode");
+            else
+            document.getElementById("address").style["display"] = "block";
+
+        }
+
+        function Card()
+        {
+            if(confirm("Are you Sure you want to complete the payment?")){
+                alert("Payment Successful");
+            }
+            else
+            {
+                alert("Transaction Failed!! Please try again.")
+            }
+        }
+        var coll = document.getElementsByClassName("collapsible");
+        var count;
+                   
+        for (count = 0; count < coll.length; count++) {
+        coll[count].addEventListener("click", function() {
+        //alert("hello");
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+            content.style.display = "none";
+        } 
+        else {
+            content.style.display = "block";
+        }
+
+    });
+}
+
+        </script>
+</html>

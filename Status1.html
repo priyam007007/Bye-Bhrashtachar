@@ -1,0 +1,107 @@
+<html>
+    <head>
+        <style type="text/css">
+        .collapsible {
+            background-color: white;
+            color: black;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: 1px solid black;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+        }
+        .active, .collapsible:hover {
+            background-color: palevioletred;
+        }
+        .content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #f1f1f1;
+            width:100%;
+        }
+        .img1 {
+            width:500px;
+            height:300px;
+        }
+
+        figcaption{
+            font-weight: bold;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: medium;
+        }
+        </style>
+        
+    </head>
+    <body style="align:left;">
+        <h1 align="center">Your Documents</h1>
+        <button type="button" class="collapsible">
+            <h3>Click to view your documents</h3>
+        </button>
+        <div class="content">
+            <div align="center">
+                <figure>
+                <img class="img1" src="licence.jpg" />
+                <figcaption>Driving License</figcaption><br/> <br/>
+                <img class="img1" src="rc.jpg"/>
+                <figcaption>Vehicle Registration Certificate</figcaption><br/><br/>
+                <img class="img1" src="PUC.jpg"/>
+                <figcaption>Vehicle Pollution Certificate</figcaption><br/><br/>
+                <img src="insurance.png"/>
+                <figcaption>Vehicle insurance</figcaption><br/><br/>
+                </figure>
+            </div>
+        </div>
+        
+        <h1 align="center">Your Vehicle Details</h1>
+        <button type="button" class="collapsible">
+            <h3>Click to view your vehicle details.</h3>
+        </button>
+        <div class="content">
+            <div align="center">
+                <table border="1">
+                    <tr>
+                        <th>Vehicle Class</th>
+                        <th>Vehicle Type</th>
+                        <th>Model</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td>Two Wheeler</td>
+                        <td>Scooter</td>
+                        <td>TVS Jupiter ZX 2021</td>
+                        <td><a href="Status.html"><button id="btn1">Check Status</button></a></td>
+                    </tr>
+                    <tr>
+                        <td>Four Wheeler</td>
+                        <td>Car</td>
+                        <td>Lamborghini Murcielago LP640</td>
+                        <td><a href="Status.html"><button id="btn1">Check Status</button></a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        </body>
+        <script>
+            var coll = document.getElementsByClassName("collapsible");
+            var count;
+                       
+            for (count = 0; count < coll.length; count++) {
+            coll[count].addEventListener("click", function() {
+            //alert("hello");
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } 
+            else {
+                content.style.display = "block";
+            }
+    
+        });
+    }
+    
+            </script>
+</html>
