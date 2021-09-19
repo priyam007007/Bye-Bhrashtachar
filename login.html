@@ -9,15 +9,15 @@
 	.header {
                 background-color: #01112b;
                 padding: 30px;
-        		text-align: center;
+        		text-align: left;
         		color: palevioletred;
         		font-family: "Comic Sans MS", Times, serif;
             }
 	td {
-        align-content: center;
+        align-content: left;
 		background-color: #01112b;
         padding: 30px;
-        
+        border-style: none;
         color: palevioletred;
         font-family: "Comic Sans MS", Times, serif;
 	}
@@ -54,7 +54,7 @@
 	}
 	
 	/*set a style for the buttons*/
-	button {
+	.button {
 		background-color: #011530;
 		color: white;
 		padding: 14px 20px;
@@ -177,14 +177,24 @@
 <body>
 	<!-- header of website layout -->
 	<header>
-		<table width="100%">
+		<table style="border: none; background-color: #01112b; width: 100%;">
 			<tr>
-				<td><img src="BB.png" Logo" align="left"></td>
-				<td><h2 style = "color: palevioletred; font-size:200%;">
-					Bye Bhrastachar
-				</h2></td>
+				<td>
+					<img src="BB.png">
+				</td>
+				<td>
+					<h2 align="left" style="color: palevioletred; font-size: 200%; ">Bye Bhrashtachar</h2>
+				</td>
 			</tr>
 		</table>
+		<!-- <table width="100%" style="border: hidden; border-color:#01112b; margin: 0%;">
+			<tr>
+				<td><img src="BB.png" align="left"></td>
+				<td><h2 style = "color: palevioletred; font-size:200%;">
+					Bye Bhrashtachar
+				</h2></td>
+			</tr>
+		</table> -->
 	</header>
 	 
 	
@@ -192,7 +202,7 @@
 	<center style = "font-size:200%;">
 		<h2>Login Form</h2>
 		<!--Step 1 : Adding HTML-->
-		<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+		<button onclick="document.getElementById('id01').style.display='block'" class="button" style="width:auto;">Login</button>
 	
 
 	</center>
@@ -208,11 +218,11 @@
 			<div class="container">
 				<label><b>Username</b></label>
 				<input type="text" placeholder="Enter Username" name="uname" required>
-
+				
 				<label><b>Password</b></label>
 				<input type="password" placeholder="Enter Password" name="psw" required>
 
-				<button type="submit" onclick="direct()">Login</button>
+				<a href="home.html"><input type="button" value="Login" class="button"></a>
 				<input type="checkbox" checked="checked"> Remember me
 			</div>
 
@@ -225,7 +235,7 @@
 
 	<script>
 		function direct(){
-			window.location.replace("home.html");
+			window.location.replace("");
 		}
 		var modal = document.getElementById('id01');
 		window.onclick = function(event) {
